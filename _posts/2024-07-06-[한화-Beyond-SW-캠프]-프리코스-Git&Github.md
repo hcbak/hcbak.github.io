@@ -1,5 +1,5 @@
 ---
-title: [한화 Beyond SW 캠프] 프리코스 Git&Github
+title: "[한화 Beyond SW 캠프] 프리코스 Git&Github"
 author: hcbak
 date: 2024-07-06 14:55:23 +0900
 categories: [Study, Hanwha Beyond SW Camp]
