@@ -5,6 +5,13 @@
 @import 'colors/syntax-light';
 @import 'colors/syntax-dark';
 
+@font-face {
+  font-family: 'D2Coding';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_three@1.0/D2Coding.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 html {
   @media (prefers-color-scheme: light) {
     &:not([data-mode]),
@@ -62,6 +69,7 @@ html {
     font-size: $code-font-size;
     line-height: 1.4rem;
     word-wrap: normal; /* Fixed Safari overflow-x */
+    font-family: 'D2Coding';
   }
 
   table {
