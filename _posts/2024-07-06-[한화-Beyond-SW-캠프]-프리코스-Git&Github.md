@@ -1,11 +1,11 @@
 ---
-title: "[한화 Beyond SW 캠프] 프리코스 Git&Github"
+title: "[한화시스템 Beyond SW캠프] 프리코스 Git&Github"
 author: hcbak
 date: 2024-07-06 14:55:23 +0900
-categories: [Study, Hanwha Beyond SW Camp]
+categories: [Study, Hanwha Systems Beyond SW Camp]
 ---
 
-한화 Beyond SW 캠프에 참여하게 되었다.
+한화시스템 Beyond SW캠프에 참여하게 되었다.
 
 본 과정은 아직 시작하지 않았지만 프리코스라고 하여 선행학습을 요구했다.  
 사실 아무것도 할 게 없어서 쓸데없이 C#을 공부하면서 시간을 때우고 있었기 때문에 반가운 일이었다.
