@@ -12,10 +12,15 @@ MariaDB 10.11.8
 ## SELECT
 ```sql
 -- SELECT: FROM 테이블의 컬럼을 조회
+
+-- menu 테이블의 category 컬럼 조회
 SELECT category FROM menu;
 
 -- '*': 모든 컬럼
 SELECT * FROM menu;
+
+-- AS: 별칭
+SELECT category AS cat FROM menu;
 
 
 -- DISTINCT: 중복 제거
@@ -92,4 +97,65 @@ SELECT * FROM menu WHERE ca_index NOT IN (1, 2, 3); -- 선택 반전
 -- IS NULL: NULL값 찾기
 SELECT * FROM menu WHERE ca_index IS NULL;
 SELECT * FROM menu WHERE ca_index IS NOT NULL; -- 선택 반전
+```
+
+## JOIN
+```sql
+-- JOIN: 서로 다른 테이블을 중복되는 컬럼으로 결합
+
+-- INNER JOIN: ON 뒤에 기준이 되는 컬럼을 지정하고 일치하는 컬럼을 기준으로 결합한다.
+SELECT * FROM menu INNER JOIN sub_menu ON menu.category = sub_menu.category;
+SELECT * FROM menu JOIN sub_menu ON menu.category = sub_menu.category; -- INNER 생략 가능
+
+-- 컬럼 명이 같은 경우 USING으로 묶을 수 있다.
+SELECT * FROM menu JOIN sub_menu USING (category);
+
+
+-- LEFT JOIN: 왼쪽 테이블을 기준으로 오른쪽 테이블을 결합한다.
+SELECT * FROM menu LEFT JOIN sub_menu ON menu.category = sub_menu.category;
+
+
+-- RIGHT JOIN: 오른쪽 테이블을 기준으로 왼쪽 테이블을 결합한다.
+SELECT * FROM menu RIGHT JOIN sub_menu ON menu.category = sub_menu.category;
+
+
+-- SELF JOIN: 같은 테이블 결합
+SELECT a.category, b.category FROM menu a JOIN menu b USING (category);
+```
+
+## GROUP BY
+```sql
+-- GROUP BY: 컬럼을 같은 값 끼리 그룹화한다.
+
+SELECT category FROM menu GROUP BY category;
+
+-- 다양한 함수로 어떻게 그룹화했는지 확인할 수 있다.
+SELECT category, COUNT(*) FROM menu GROUP BY category; -- 그룹화한 갯수
+SELECT category, SUM(*) FROM menu GROUP BY category;   -- 그룹화한 숫자의 합
+SELECT category, AVG(*) FROM menu GROUP BY category;   -- 그룹화한 숫자의 평균
+
+
+-- HAVING: 그룹화 한 결과에 조건을 걸 수 있다.
+SELECT category, COUNT(*) FROM menu GROUP BY category HAVING COUNT(*) > 5;
+
+
+-- WITH ROLLUP: 마지막 행에 중간 집계를 넣어준다.
+SELECT category, COUNT(*) FROM menu GROUP BY category WITH ROLLUP; -- 맨 아래 행에 전체 COUNT 열의 합이 포함된 행을 추가한다.
+```
+
+## SubQuery
+```sql
+-- SubQuery: 쿼리로 가공한 테이블을 다른 쿼리에서 사용하고 싶은 경우에 쓰는 기법이다.
+
+SELECT * FROM (SELECT * FROM menu) AS a
+-- 해석: menu 테이블 전체를 출력한 테이블을 전체 출력
+-- SubQuery는 다양한 곳에서 사용할 수 있으나 FROM 절에서 사용한 경우 AS로 별칭 지정 필수
+
+
+```
+
+## SET OPERATOR
+```sql
+
+
 ```
