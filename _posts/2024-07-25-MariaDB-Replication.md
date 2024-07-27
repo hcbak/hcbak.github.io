@@ -99,3 +99,21 @@ UPDATE mysql.user SET super_priv='N' WHERE user <> 'root';
 CHANGE MASTER를 잘못 입력했을 경우 STOP SLAVE를 입력하여 SLAVE 모드를 종료하고 다시 CHANGE MASTER 문을 입력해준다.
 
 이후 Master 서버에서 Datebase나 Table을 변경해보고 Slave에 동기화가 되는지 확인하면 된다.
+
+## Trouble Shooting
+
+이게 몇 가지 알아야 할 게 있는데, SHOW MASTER STATUS에서 받아온 Postion은 변경 로그의 index인 것으로 보인다.
+
+저 변경 로그가 발생하면 Slave에서 로그를 가져와서 그대로 적용하는 것으로 보이는데, 여기에서 문제가 몇 가지 생긴다.
+
+Master - Slave 전부 아예 백지 상태에서 시작하면 문제가 없는데, **이미 운영중인 DBMS를 Replication 하고자 할 때 동기화가 제대로 되지 않는 문제**가 생긴다.
+
+Master 쪽에서 운영 중인 Database를 그대로 복제해주는 것이 아니라 **변경사항만 로그로** 보내주기 때문에, 텅 빈 Slave의 Database는 CREATE DATABASE를 제외하고는 **허공에 쿼리를 날리게 된다**. 그렇게 오류나서 뻗는다.
+
+따라서 만약 Master가 이미 운영중이라면, 해당 Database를 복제해서 Slave에 미리 넣어주고 Replication을 시작해야 한다.
+
+비슷한 문제인데 **다수의 Database**가 Master에서 운영중이라면 그것의 **일부만 Replication하는 것이 불가능**하다.
+
+원하는 Database만 잘 복제해놨다고 해도 다른 Database에서 쿼리가 발생하면 허공 쿼리를 시전하고 그대로 뻗어버리게 된다.
+
+겉으로 보기에는 좋아 보였는데, 막상 적용하고 보니 설정값을 수동으로 넣는 것도 그렇고 개복치마냥 뻗고 제대로 알려주지도 않는 것으로 보여서 실 서비스에 적용은 정말 많은 테스트를 거치고 진행해야 할 것 같다.
