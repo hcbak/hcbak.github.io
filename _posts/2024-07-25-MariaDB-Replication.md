@@ -48,8 +48,8 @@ Slave에서 접근할 계정을 생성한다.
 GRANT REPLICATION slave on *.* to slave@'%' IDENTIFIED BY 'password';
 ```
 
-```bash
-SHOW MASTER STATUS
+```sql
+SHOW MASTER STATUS;
 +------------------+----------+--------------+------------------+
 | File             | Position | Binlog_Do_DB | Binlog_Ignore_DB |
 +------------------+----------+--------------+------------------+
@@ -67,11 +67,13 @@ Position → master_log_pos
 ```bash
 sudo nano /etc/mysql/mariadb.conf.d/50-server.cnf
 
+...
 [mysqld]
 server-id = 2
 relay_log = mysql-relay-bin
 log_slave_updates = 1
 read_only = 1
+...
 ```
 
 재시작 후 MariaDB에 root로 접속한다.
@@ -91,6 +93,7 @@ START SLAVE;
 
 SHOW SLAVE STATUS \G;
 
+-- root를 제외한 관리자 권한 제거
 UPDATE mysql.user SET super_priv='N' WHERE user <> 'root';
 ```
 CHANGE MASTER를 잘못 입력했을 경우 STOP SLAVE를 입력하여 SLAVE 모드를 종료하고 다시 CHANGE MASTER 문을 입력해준다.

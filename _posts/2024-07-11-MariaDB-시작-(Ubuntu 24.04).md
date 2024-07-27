@@ -56,7 +56,7 @@ CREATE USER 'username'@'%' IDENTIFIED BY 'password';
 DROP USER 'username'@'%';
 
 -- 조회
-USE mysql;
+USE mysql
 SELECT User, Host FROM user;
 ```
 % 자리는 IP 자리이다.  
