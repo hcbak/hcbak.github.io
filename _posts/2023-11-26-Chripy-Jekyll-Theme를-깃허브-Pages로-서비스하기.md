@@ -4,7 +4,7 @@ author: hcbak
 date: 2023-11-26 04:30:25 +0900
 categories: [Blog]
 tags: []
-img_path: /assets/img/posts/Blog/2023-11-26-Chirpy-Jekyll-Theme를-깃허브-Pages로-서비스하기/
+img_path: /assets/img/posts/blog/2023-11-26-Chirpy-Jekyll-Theme를-깃허브-Pages로-서비스하기/
 ---
 
 매번 블로그를 하려다가 실패한다.

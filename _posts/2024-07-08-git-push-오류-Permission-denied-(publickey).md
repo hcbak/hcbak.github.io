@@ -3,7 +3,7 @@ title: "git push 오류 Permission denied (publickey)"
 author: hcbak
 date: 2024-07-08 17:36:27 +0900
 categories: [VCS, Git]
-img_path: /assets/img/posts/Blog/2024-07-08-git-push-오류-Permission-denied-(publickey)/
+img_path: /assets/img/posts/blog/2024-07-08-git-push-오류-Permission-denied-(publickey)/
 ---
 
 ### 오류
