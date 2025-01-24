@@ -58,7 +58,7 @@ AWS가 익숙하지 않다면 한번 쭉 돌려보는 것도 좋은 것 같다. 
 
 ## 결과
 
-<div data-iframe-width="300" data-iframe-height="250" data-share-badge-id="7210ff37-9c96-4980-9afa-01407e3ab38a" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
+<div data-iframe-width="300" data-iframe-height="250" data-share-badge-id="7210ff37-9c96-4980-9afa-01407e3ab38a" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="https://cdn.credly.com/assets/utilities/embed.js"></script>
 
 ## 후기
 
