@@ -17,10 +17,10 @@ img_path: /assets/img/posts/blog/2025-01-24-AWS-Certified-Cloud-Practitioner/
 
 |일정|날짜|
 |-|-|
-|접수|1월 15일|
-|시험|1월 24일|
-|Credly|1월 24일|
-|||
+|접수|1.15.|
+|시험|1.24. 16:45|
+|Credly(배지)|1.24. 20:22|
+|결과|1.25. 04:19|
 
 ## 공부
 
@@ -94,4 +94,4 @@ AWS가 익숙하지 않다면 한번 쭉 돌려보는 것도 좋은 것 같다. 
 
 ### AWS Skill Builder
 
-- AWS Cloud Practitioner Essentials
+- [AWS Cloud Practitioner Essentials](https://explore.skillbuilder.aws/learn/courses/13522/aws-cloud-practitioner-essentials-hangug-eo){:target="_blank"}
