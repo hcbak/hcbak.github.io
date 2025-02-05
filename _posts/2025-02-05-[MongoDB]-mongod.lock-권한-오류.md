@@ -192,4 +192,4 @@ sudo rm /tmp/mongodb-27017.sock
 
 ## 참고
 
-- [Ubuntu Community Help Wiki - FilePermissionsACLs](https://help.ubuntu.com/community/FilePermissionsACLs)
+- [Ubuntu Community Help Wiki - FilePermissionsACLs](https://help.ubuntu.com/community/FilePermissionsACLs){:target="_blank"}
