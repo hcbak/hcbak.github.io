@@ -1,5 +1,5 @@
 ---
-title: "[MongoDB] mongod.lock 권한 오류"
+title: "MongoDB mongod.lock 권한 오류"
 author: hcbak
 date: 2025-02-05 22:41:58 +0900
 categories: [DBMS, MongoDB]

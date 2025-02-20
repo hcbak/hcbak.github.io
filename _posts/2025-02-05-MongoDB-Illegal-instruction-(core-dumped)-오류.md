@@ -1,5 +1,5 @@
 ---
-title: "[MongoDB] Illegal instruction (core dumped) 오류"
+title: "MongoDB Illegal instruction (core dumped) 오류"
 author: hcbak
 date: 2025-02-05 21:40:28 +0900
 categories: [DBMS, MongoDB]
