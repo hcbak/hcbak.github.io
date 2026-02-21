@@ -5,12 +5,7 @@
 @import 'colors/syntax-light';
 @import 'colors/syntax-dark';
 
-@font-face {
-  font-family: 'D2Coding';
-  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_three@1.0/D2Coding.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
+@import url('https://cdn.jsdelivr.net/gh/fonts-archive/D2Coding/subsets/D2Coding-dynamic-subset.css');
 
 html {
   @media (prefers-color-scheme: light) {
